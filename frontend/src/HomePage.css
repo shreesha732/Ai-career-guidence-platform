@@ -1,0 +1,87 @@
+/* Navbar (Glassy) */
+.glassy-navbar {
+  background: #ffffff14 !important;
+  backdrop-filter: blur(18px);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.glassy-navbar .navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #02011200 !important;
+}
+.highlight {
+  color: #00c6ff;
+}
+.welcome-text {
+  color: #00000c;
+  font-weight: 500;
+}
+.logout-btn {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  border: none;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.logout-btn:hover {
+  background: linear-gradient(135deg, #dd2476, #ff512f);
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-dashboard {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  padding: 5rem 1rem;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.dashboard-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+}
+.dashboard-card .icon {
+  color: #00c6ff;
+}
+
+/* Buttons */
+.btn-custom {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.btn-custom:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  background: #111;
+  color: #aaa;
+  padding: 2rem 1rem;
+}
+.footer .highlight {
+  color: #00c6ff;
+}

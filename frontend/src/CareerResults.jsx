@@ -1,15 +1,17 @@
 // src/CareerResults.js
-import React from 'react';
+import React from "react";
+import { FaCheckCircle, FaLightbulb } from "react-icons/fa";
+import "./CareerResults.css"; // custom css
 
 function CareerResults() {
-  const answers = JSON.parse(localStorage.getItem('careerSurveyAnswers'));
+  const answers = JSON.parse(localStorage.getItem("careerSurveyAnswers"));
 
   const getSuggestion = () => {
     if (!answers) return "No survey data found.";
 
     const { q1, q2, q3 } = answers;
 
-    // Full mapping of Q1, Q2, Q3 combinations
+    // Your suggestion mapping logic here...
     if (q1 === 'tech' && q2 === 'build' && q3 === 'math')
       return "You might excel in Software Engineering, Web Development, or AI.";
     if (q1 === 'tech' && q2 === 'build' && q3 === 'science')
@@ -161,22 +163,47 @@ function CareerResults() {
   };
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-center fw-bold mb-4">Career Suggestions</h2>
-      <div className="bg-light p-4 rounded shadow-sm">
+    <div className="results-container">
+      <div className="results-card shadow-lg p-4">
+        <h2 className="text-center fw-bold mb-3 text-primary">
+          Career Suggestions
+        </h2>
+        <p className="text-center text-muted">
+          Based on your answers, here’s a path you might enjoy.
+        </p>
+
         {answers ? (
           <>
-            <h5>Your Interests:</h5>
-            <ul>
-              <li><strong>Q1:</strong> {answers.q1}</li>
-              <li><strong>Q2:</strong> {answers.q2}</li>
-              <li><strong>Q3:</strong> {answers.q3}</li>
-            </ul>
-            <h5 className="mt-4">Suggested Path:</h5>
-            <p>{getSuggestion()}</p>
+            <div className="answers-box mt-4">
+              <h5 className="fw-bold text-dark">
+                <FaCheckCircle className="me-2 text-success" />
+                Your Interests
+              </h5>
+              <ul className="list-group list-group-flush mt-2">
+                <li className="list-group-item">
+                  <strong>Q1:</strong> {answers.q1}
+                </li>
+                <li className="list-group-item">
+                  <strong>Q2:</strong> {answers.q2}
+                </li>
+                <li className="list-group-item">
+                  <strong>Q3:</strong> {answers.q3}
+                </li>
+              </ul>
+            </div>
+
+            <div className="suggestion-box mt-4 p-3 rounded">
+              <h5 className="fw-bold text-dark">
+                <FaLightbulb className="me-2 text-warning" />
+                Suggested Path
+              </h5>
+              <p className="mt-2 fs-5">{getSuggestion()}</p>
+            </div>
           </>
         ) : (
-          <p>No survey answers found. Please complete the survey first.</p>
+          <div className="alert alert-warning mt-3">
+            No survey answers found. Please complete the survey first.
+          </div>
         )}
       </div>
     </div>
